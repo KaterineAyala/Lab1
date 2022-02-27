@@ -1,0 +1,54 @@
+﻿@model Lab1.Models.Acciones
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<center><h1>Periodo 3</h1></center>
+
+<div class="color" />
+
+<form asp- controller="Home" asp-action="Periodo3">
+
+    <div class="card" />
+
+    <label>Nombre</label>
+
+    <input type="text" placeholder="Ingresa el nombre del estudiante" name="Nombre" class="form-control">
+
+    <label>Laboratorio</label>
+
+    @if (ViewBag.DatoN1V == 0)
+    {
+        <input type="text" placeholder="Ingresa tu nota de laboratorio" name="Laboratorio" class="form-control" min="0" max="10" />
+    }
+
+    else
+    {
+        <input type="text" placeholder="Ingresa tu nota de laboratorio" name="Laboratorio" value="@ViewBag.DatoN1V = Laboratorio;" class="form-control" min="0" max="10" />
+    }
+
+    <label>Parcial</label>
+
+    @if (ViewBag.DatoN2V == 0)
+    {
+        <input type="text" placeholder="Ingresa tu nota de parcial" name="Parcial" class="form-control" min="0" max="10" />
+    }
+
+    else
+    {
+        <input type="text" placeholder="Ingresa tu nota de parcial" name="Parcial" value="@ViewBag.DatoN2V = Parcial;" class="form-control" min="0" max="10" />
+    }
+
+    <br />
+    <button class="btn btn-success">Calcular Nota de Promedio 3</button>
+
+
+    <label>Resultado</label>
+    <br />
+    <label>Estudiante: @ViewBag.VariableAEnviarNombre</label>
+    <label><p class="text-danger">Promedio: @ViewBag.VariableAEnviar3</p></label>
+
+    <br />
+</form>
